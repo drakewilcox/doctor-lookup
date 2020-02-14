@@ -14,9 +14,7 @@ $(document).ready(function() {
   })();
 
   function getElements(response) {
-    if (response) {
-      
-    }
+    if (response) {}
   }
 
 });
