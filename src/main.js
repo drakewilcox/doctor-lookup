@@ -12,20 +12,24 @@ $(document).ready(function() {
 
     const firstName = $("#firstName").val();
     const lastName = $('#lastName').val();
-    // const special = $('#special').val();
+    const special = $('#special').val();
     const state = $('#state').val();
     const city = $('#city').val();
     const gender = $('#gender').val();
+    console.log(state);
+    console.log(city)
     $('#firstName').val("");
     $('#lastName').val("");
     $('#special').val("");
     $('#state').val("");
     $("#city").val();
     $('#gender').val("");
+
+ 
     
     (async () => {
       let doctor = new DoctorSearch();
-      const response = await doctor.getDoctor();
+      const response = await doctor.getDoctor(firstName, lastName, special, state, city, gender);
       getElements(response);
     })();
     

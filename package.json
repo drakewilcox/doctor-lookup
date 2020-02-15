@@ -10,7 +10,7 @@
     "test": "jest"
   },
   "keywords": [],
-  "author": "",
+  "author": "Drake Wilcox",
   "license": "ISC",
   "devDependencies": {
     "@babel/core": "^7.6.4",
