@@ -22,12 +22,6 @@ $(document).ready(function() {
     $('#state').val("");
     $("#city").val();
     $('#gender').val("");
-    console.log(firstName);
-    console.log(lastName);
-    // console.log(special);
-    console.log(state);
-    console.log(city);
-    console.log(gender);
     
     (async () => {
       let doctor = new DoctorSearch();
@@ -36,7 +30,9 @@ $(document).ready(function() {
     })();
     
     function getElements(response) {
-      if (response) {}
+      if (response) {
+        console.log(response);
+      }
     }
     
   });
