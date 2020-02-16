@@ -19,7 +19,30 @@ _This project is an exercise in the use of Asynchrony and APIs. The Application 
 _{Leave nothing to chance! You want it to be easy for potential users, employers and collaborators to run your app. Do I need to run a server? How should I set up my databases? Is there other code this app depends on?}_
 
 ## Specifications
-1. _
+Specification Example Input Example Output
+
+User inputs a location and the site returns a list of doctors in the area
+  Portland, OR 
+  list of doctors
+User inputs a medical issue and receives a list of doctors that match the search
+  therapy
+  list of doctors
+User inputs the first name of a doctor and receives a list of doctors that fit the searh in that area. 
+  xavier
+  all doctors with the first name of xavier
+User inputs the last name of a doctor and receives a list of doctors that fit the search in that area
+  preciado
+  all doctors with the last name of preciado
+When the site returns information, the site should display first and last name, address, phone number, website and whether or not the doctor is accepting new patients. 
+  xavier
+  Xavier Preciado, 2348 NW Lovejoy St., 503.224.7224, Accepting new patients.
+If the API results in an error, the application returns with a notification
+  input: No location
+  output: please enter your location
+If the query response does not include any doctors, the site should return with a notification 
+  input: drake wilcox
+  output: No doctors meet this criteria. 
+
 
 ## Known Bugs
 
