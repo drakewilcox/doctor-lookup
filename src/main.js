@@ -15,7 +15,6 @@ $(document).ready(function() {
     const special = $('#special').val();
     const state = $('#state').val();
     const city = $('#city').val();
-    const gender = $('#gender').val();
     console.log(state);
     console.log(city)
     $('#firstName').val("");
@@ -23,21 +22,29 @@ $(document).ready(function() {
     $('#special').val("");
     $('#state').val("");
     $("#city").val();
-    $('#gender').val("");
+
 
  
     
     (async () => {
       let doctor = new DoctorSearch();
-      const response = await doctor.getDoctor(firstName, lastName, special, state, city, gender);
+      let response = await doctor.getDoctor(firstName, lastName, special, state, city);
       getElements(response);
+      function getElements(response) {
+        if (response) {
+          response.data.forEach(about => {
+            about.practices.forEach(location => {
+              console.log(about.profile.first_name);
+              console.log(location.visit_address)
+              $("#showDoctors").append("<br>" + "Doctor Name: " + about.profile.first_name + " " + about.profile.last_name + "<br>" + "Address: " + location.visit_address.street + "<br>" + location.visit_address.city + "," + location.visit_address.state + " " + location.visit_address.zip + "<br>" + "Phone Number: " + location.phones[0].number + "<br>")
+  
+            });
+          });
+        }
+      }
     })();
     
-    function getElements(response) {
-      if (response) {
-        console.log(response);
-      }
-    }
+      
     
   });
 });
