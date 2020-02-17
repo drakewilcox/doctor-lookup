@@ -19,7 +19,7 @@ $(document).ready(function() {
  
     if (city === "" || state === "Choose...") {
       $("#alert").show();
-      } else {
+    } else {
       $("#alert").hide();
     }
     (async () => {
@@ -30,12 +30,11 @@ $(document).ready(function() {
           $("#warningText").text("We are sorry, there was an error in processing your search, please make sure all of your information is correct.");
         }
         else if (response.meta.total === 0) {
-          $("#warningText").text("We apologize, no results have been found.")
+          $("#warningText").text("We apologize, no results have been found.");
         }
         else {
           response.data.forEach(about => {
-              $("#showDoctors").append("<br>" + "Doctor Name: " + about.profile.first_name + " " + about.profile.last_name + "<br>" + "Address: " + about.practices[0].visit_address.street + "<br>" + about.practices[0].visit_address.city + "," + about.practices[0].visit_address.state + " " + about.practices[0].visit_address.zip + "<br>" + "Phone Number: " + about.practices[0].phones[0].number + "<br>" + "<br>" );
-
+            $("#showDoctors").append("<br>" + "Doctor Name: " + about.profile.first_name + " " + about.profile.last_name + "<br>" + "Address: " + about.practices[0].visit_address.street + "<br>" + about.practices[0].visit_address.city + "," + about.practices[0].visit_address.state + " " + about.practices[0].visit_address.zip + "<br>" + "Phone Number: " + about.practices[0].phones[0].number + "<br>" + "Currently accepting new patients: " + about.practices[0].accepts_new_patients + "<br>" );
           });
         }
       }
