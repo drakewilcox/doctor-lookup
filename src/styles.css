@@ -5,3 +5,7 @@ h1 {
   padding: 30px;
   background-color: rgb(155, 183, 236);
 }
+#alert {
+  color: red;
+  display: none;
+}
