@@ -16,13 +16,7 @@ $(document).ready(function() {
     const special = $('#special').val();
     const state = $('#state').val();
     const city = $('#city').val().toLowerCase();
-    // console.log(state);
-    // console.log(city)
-    // $('#firstName').val("");
-    // $('#lastName').val("");
-    // $('#special').val("");
-    // $('#state').val("");
-    // $("#city").val();
+ 
     if (city === "" || state === "Choose...") {
       $("#alert").show();
       } else {
@@ -34,11 +28,7 @@ $(document).ready(function() {
       function getElements(response) {
         if (response) {
           response.data.forEach(about => {
-            console.log(about.practices[0])
-            about.practices.forEach(location => {
-              console.log(about.practices)
-              $("#showDoctors").append("<br>" + "Doctor Name: " + about.profile.first_name + " " + about.profile.last_name + "<br>" + "Address: " + location.visit_address.street + "<br>" + location.visit_address.city + "," + location.visit_address.state + " " + location.visit_address.zip + "<br>" + "Phone Number: " + location.phones[0].number + "<br>")
-            });
+              $("#showDoctors").append("<br>" + "Doctor Name: " + about.profile.first_name + " " + about.profile.last_name + "<br>" + "Address: " + about.practices[0].visit_address.street + "<br>" + about.practices[0].visit_address.city + "," + about.practices[0].visit_address.state + " " + about.practices[0].visit_address.zip + "<br>" + "Phone Number: " + about.practices[0].phones[0].number + "<br>" + "<br>" )
           });
         }
       }
