@@ -35,7 +35,7 @@ _Clone this repository via Terminal using the following commands:_
 * ``$ git clone https://github.com/drakewilcox/doctor-lookup``
 * ``$ cd doctor-lookup``
 
-_ in the root directory create a file name ``.env`` by entering the command_ ``touch .env`` _in Terminal)._
+_In the root directory create a file name ``.env`` by entering the command_ ``touch .env`` _in Terminal)._
 
 _Visit the BetterDoctor API [website](https://developer.betterdoctor.com/) and click "Get a free API key". Fill out the form, then your own API key will be listed on the front page or under My Account > Applications._
 
@@ -71,6 +71,6 @@ _HTML, CSS, git, JavaScript, jQuery, npm, webpack, Jest, BetterDoctor API_
 
 ### License
 
-*{This webpage is licesnsed under the MIT license.}*
+*This webpage is licesnsed under the MIT license.*
 
 Copyright (c) 2020 **_Drake Wilcox_**
